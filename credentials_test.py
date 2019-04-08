@@ -65,10 +65,14 @@ class TestUser(unittest.TestCase):
 
 
 # More tests above
-        def test_delete_credentials(self):
-            '''
+       
+def delete_credentials(self):
+
+                '''
+                delete_credentials method deletes a saved credentials from the credentials_list
+        
             test_delete_credentials to test if we can remove a credentials from our credentials list
-            '''
+                '''
             self.new_credentials.save_credentials()
             test_credentials = Credentials("Test","user","meme","password","instagram") # new contact
             test_credentials.save_credentials()
