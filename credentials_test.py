@@ -73,15 +73,15 @@ def delete_credentials(self):
         
             test_delete_credentials to test if we can remove a credentials from our credentials list
                 '''
-            self.new_credentials.save_credentials()
-            test_credentials = Credentials("Test","user","meme","password","instagram") # new contact
-            test_credentials.save_credentials()
+self.new_credentials.save_credentials()
+test_credentials = Credentials("Test","user","meme","password","instagram") # new contact
+test_credentials.save_credentials()
 
-            self.new_credentials.delete_credentials()# Deleting a credentials object
-            self.assertEqual(len(Credentials.credentials_list),1)
+self.new_credentials.delete_credentials()# Deleting a credentials object
+self.assertEqual(len(Credentials.credentials_list),1)
 
 
-        def delete_credentials(self):
+def delete_credentials(self):
 
                 '''
                 delete_credentials method deletes a saved credentials from the credentials_list
