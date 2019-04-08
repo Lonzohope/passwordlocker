@@ -65,7 +65,7 @@ class TestUser(unittest.TestCase):
 
 
 # More tests above
-    def test_delete_credentials(self):
+        def test_delete_credentials(self):
             '''
             test_delete_credentials to test if we can remove a credentials from our credentials list
             '''
