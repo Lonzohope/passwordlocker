@@ -77,7 +77,7 @@ class TestUser(unittest.TestCase):
             self.assertEqual(len(Credentials.credentials_list),1)
 
 
-             def delete_credentials(self):
+        def delete_credentials(self):
 
         '''
         delete_credentials method deletes a saved credentials from the credentials_list
