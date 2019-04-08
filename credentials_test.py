@@ -79,9 +79,9 @@ class TestUser(unittest.TestCase):
 
         def delete_credentials(self):
 
-        '''
-        delete_credentials method deletes a saved credentials from the credentials_list
-        '''
+                '''
+                delete_credentials method deletes a saved credentials from the credentials_list
+                '''
 
         Credentials.credentials_list.remove(self)
 
