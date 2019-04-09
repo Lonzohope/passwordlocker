@@ -39,19 +39,22 @@ class TestUser(unittest.TestCase):
                 '''
                 test_save_username test case to test if the credentials object is saved into the credntials list
 
-                test_save_password test case to test if the credentials object is saved into the credentials list
-                
-                test_save_platform test case to test if the credentials object is saved into the credentials list       
-                
                 '''
 
-                self.new_username.save_username() # saving the new username
-                self.new_password.save_password() # saving the new password
-                self.new_platform.save_platform() # saving the new platform
-                self.assertEqual(len(User.user_list),1)
+                self.new_credentials.save_credentials() # saving the new username
+                # self.new_password.save_password() # saving the new password
+                # self.new_platform.save_platform() # saving the new platform
+                self.assertEqual(len(Credentials.credentials_list),1)
 
 
         # Items up here...
+
+        def tearDown(self):
+                '''
+                tearDown method that does clean up after each test case has run.
+                '''
+                Credentials.credentials_list = []
+
 
         def test_save_multiple_credentials(self):
                 '''
@@ -73,11 +76,26 @@ class TestUser(unittest.TestCase):
                 test_delete_credentials to test if we can remove a credentials from our credentials list
                 '''
                 self.new_credentials.save_credentials()
-                test_credentials = Credentials("Test","user","meme","password","instagram") # new contact
+                test_credentials = Credentials("Test","user","meme","password","instagram") # new credentials
                 test_credentials.save_credentials()
 
                 self.new_credentials.delete_credentials()# Deleting a credentials object
                 self.assertEqual(len(Credentials.credentials_list),1)
+
+
+        def test_find_credentials_by_username(self):
+                '''
+                test to check if we can find a credentials by username and display information
+                '''
+
+                self.new_credentials.save_credentials()
+                test_credentials = Credentials("Test","user","meme","facebook") # new credentials
+                test_credentials.save_credentials()
+
+                found_credentials = Credentials.find_by_username("meme")
+
+                self.assertEqual(found_cred.password,test_credentials.password)
+
 
 
         
