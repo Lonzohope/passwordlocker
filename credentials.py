@@ -63,8 +63,8 @@ class Credentials:
                     return credentials
 
 
-   @classmethod
-   def credentials_exist(cls,name):
+    @classmethod
+    def credentials_exist(cls,name):
             '''
             Method that checks if a credentials exists from the credentials list.
             Args:
