@@ -83,18 +83,18 @@ class TestUser(unittest.TestCase):
                 self.assertEqual(len(Credentials.credentials_list),1)
 
 
-        def test_find_credentials_by_username(self):
+        def test_find_credentials_by_credentials_name(self):
                 '''
                 test to check if we can find a credentials by username and display information
                 '''
 
                 self.new_credentials.save_credentials()
-                test_credentials = Credentials("Test","user","meme","facebook") # new credentials
+                test_credentials = Credentials("Test","user","platform","meme","facebook") # new credentials
                 test_credentials.save_credentials()
 
-                found_credentials = Credentials.find_by_username("meme")
+                found_credentials = Credentials.find_by_name("Test")
 
-                self.assertEqual(found_cred.password,test_credentials.password)
+
 
 
 
