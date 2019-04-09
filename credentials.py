@@ -53,7 +53,7 @@ class Credentials:
             Method that takes in username and returns a credentials that matches that username.
 
             Args:
-                username:  to search for
+                name: Username to search if username exists
             Returns :
                 Credentials of person that matches the username.
             '''
@@ -61,3 +61,19 @@ class Credentials:
             for credentials in cls.credentials_list:
                 if credentials.user_name == name:
                     return credentials
+
+
+   @classmethod
+   def credentials_exist(cls,name):
+        '''
+        Method that checks if a credentials exists from the credentials list.
+        Args:
+            name: Username to search if it exists
+        Returns :
+            Boolean: True or false depending if the credentials exists
+        '''
+        for credentials in cls.credentials_list:
+            if credentials.user_name == name:
+                    return True
+
+        return False
