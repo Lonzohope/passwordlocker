@@ -95,18 +95,18 @@ class TestUser(unittest.TestCase):
                 found_credentials = Credentials.find_by_name("Test")
 
 
-        def test_contact_exists(self):
+        def test_credentials_exists(self):
                 '''
-                test to check if we can return a Boolean  if we cannot find the contact.
+                test to check if we can return a Boolean  if we cannot find the credentials.
                 '''
 
-                self.new_contact.save_contact()
-                test_contact = Contact("Test","user","0711223344","test@user.com") # new contact
-                test_contact.save_contact()
+                self.new_credentials.save_credentials()
+                test_credentials= Credentials("Test","user","platform","meme","facebook") # new contact
+                test_credentials.save_credentials()
 
-                contact_exists = Contact.contact_exist("0711223344")
+                credentials_exists = Credentials.credentials_exist("meme")
 
-                self.assertTrue(contact_exists)
+                self.assertTrue(credentials_exists)
   
 
 
