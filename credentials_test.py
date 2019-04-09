@@ -101,7 +101,7 @@ class TestUser(unittest.TestCase):
                 '''
 
                 self.new_credentials.save_credentials()
-                test_credentials= Credentials("Test","user","platform","meme","facebook") # new contact
+                test_credentials= Credentials("Test","user","platform","meme","facebook") # new credentials
                 test_credentials.save_credentials()
 
                 credentials_exists = Credentials.credentials_exist("meme")
