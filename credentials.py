@@ -48,7 +48,7 @@ class Credentials:
 
 
 @classmethod
-     def find_by_username(cls,username):
+    def find_by_username(cls,username):
             '''
             Method that takes in username and returns a credentials that matches that username.
 
