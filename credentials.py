@@ -47,7 +47,7 @@ class Credentials:
             Credentials.credentials_list.remove(self)
 
 
-             @classmethod
+@classmethod
     def find_by_username(cls,username):
             '''
             Method that takes in username and returns a credentials that matches that username.
