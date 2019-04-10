@@ -62,7 +62,7 @@ class TestUser(unittest.TestCase):
                 objects to our credentials_list
                 '''
                 self.new_credentials.save_credentials()
-                test_credentials = Credentials("Test","user","meme","password","instagram") # new contact
+                test_credentials = Credentials("user","meme","password","instagram") # new contact
                 test_credentials.save_credentials()
                 self.assertEqual(len(Credentials.credentials_list),2)
 
@@ -76,7 +76,7 @@ class TestUser(unittest.TestCase):
                 test_delete_credentials to test if we can remove a credentials from our credentials list
                 '''
                 self.new_credentials.save_credentials()
-                test_credentials = Credentials("Test","user","meme","password","instagram") # new credentials
+                test_credentials = Credentials("user","platform","meme","password","instagram") # new credentials
                 test_credentials.save_credentials()
 
                 self.new_credentials.delete_credentials()# Deleting a credentials object
@@ -89,10 +89,10 @@ class TestUser(unittest.TestCase):
                 '''
 
                 self.new_credentials.save_credentials()
-                test_credentials = Credentials("Test","user","platform","meme","facebook") # new credentials
+                test_credentials = Credentials("user","platform","meme","facebook") # new credentials
                 test_credentials.save_credentials()
 
-                found_credentials = Credentials.find_by_name("Test")
+                found_credentials = Credentials.find_by_name("meme")
 
 
         def test_credentials_exists(self):
@@ -101,7 +101,7 @@ class TestUser(unittest.TestCase):
                 '''
 
                 self.new_credentials.save_credentials()
-                test_credentials= Credentials("Test","user","platform","meme","facebook") # new credentials
+                test_credentials= Credentials("user","platform","meme","facebook") # new credentials
                 test_credentials.save_credentials()
 
                 credentials_exists = Credentials.credentials_exist("meme")
