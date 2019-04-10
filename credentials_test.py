@@ -62,7 +62,7 @@ class TestUser(unittest.TestCase):
                 objects to our credentials_list
                 '''
                 self.new_credentials.save_credentials()
-                test_credentials = Credentials("user","meme","password","instagram") # new contact
+                test_credentials = Credentials("user","platform", "meme","password","instagram") # new contact
                 test_credentials.save_credentials()
                 self.assertEqual(len(Credentials.credentials_list),2)
 
@@ -89,7 +89,7 @@ class TestUser(unittest.TestCase):
                 '''
 
                 self.new_credentials.save_credentials()
-                test_credentials = Credentials("user","platform","meme","facebook") # new credentials
+                test_credentials = Credentials("user","platform","meme","password","facebook") # new credentials
                 test_credentials.save_credentials()
 
                 found_credentials = Credentials.find_by_name("meme")
@@ -101,7 +101,7 @@ class TestUser(unittest.TestCase):
                 '''
 
                 self.new_credentials.save_credentials()
-                test_credentials= Credentials("user","platform","meme","facebook") # new credentials
+                test_credentials= Credentials("user","platform","meme","password","facebook") # new credentials
                 test_credentials.save_credentials()
 
                 credentials_exists = Credentials.credentials_exist("meme")
